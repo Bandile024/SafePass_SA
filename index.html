@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SafePass SA</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dark">
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">🔐</span>
+        <div>
+          <h1>SafePass <span>SA</span></h1>
+          <p class="tagline">Check &amp; Generate Secure Passwords</p>
+        </div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="Toggle light/dark mode">
+        <span id="themeIcon">☀️</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- CHECKER CARD -->
+    <section class="card" id="checkerCard">
+      <h2 class="card-title">🔍 Check Your Password</h2>
+
+      <div class="input-row">
+        <div class="input-wrapper">
+          <input
+            type="password"
+            id="passwordInput"
+            placeholder="Type a password here…"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button class="show-btn" id="showBtn" title="Show / hide password">👁️</button>
+        </div>
+        <span class="char-count" id="charCount">0 chars</span>
+      </div>
+
+      <!-- STRENGTH METER -->
+      <div class="meter-wrap">
+        <div class="meter-bar">
+          <div class="meter-fill" id="meterFill"></div>
+        </div>
+        <span class="strength-label" id="strengthLabel">—</span>
+      </div>
+
+      <!-- FEEDBACK LIST -->
+      <ul class="feedback-list" id="feedbackList">
+        <li class="tip-placeholder">Start typing to see feedback…</li>
+      </ul>
+    </section>
+
+    <!-- GENERATOR CARD -->
+    <section class="card" id="generatorCard">
+      <h2 class="card-title">⚙️ Generate a Strong Password</h2>
+
+      <!-- OPTIONS -->
+      <div class="options-grid">
+        <div class="option-row full-width">
+          <label for="lengthSlider">Length: <strong id="lengthVal">16</strong></label>
+          <input type="range" id="lengthSlider" min="8" max="32" value="16" />
+        </div>
+
+        <label class="checkbox-label">
+          <input type="checkbox" id="optUpper" checked />
+          <span class="custom-check"></span>
+          Uppercase (A–Z)
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="optLower" checked />
+          <span class="custom-check"></span>
+          Lowercase (a–z)
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="optNumbers" checked />
+          <span class="custom-check"></span>
+          Numbers (0–9)
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="optSymbols" />
+          <span class="custom-check"></span>
+          Symbols (!@#$%)
+        </label>
+      </div>
+
+      <!-- GENERATE BUTTON -->
+      <button class="btn-generate" id="generateBtn">⚡ Generate Password</button>
+
+      <!-- OUTPUT -->
+      <div class="output-box" id="outputBox" style="display:none;">
+        <code id="generatedPw"></code>
+        <button class="copy-btn" id="copyBtn" title="Copy to clipboard">📋 Copy</button>
+      </div>
+      <p class="copy-feedback" id="copyFeedback"></p>
+
+      <!-- HISTORY -->
+      <div class="history-wrap" id="historyWrap" style="display:none;">
+        <div class="history-header">
+          <span>🕓 Recent passwords</span>
+          <button class="clear-btn" id="clearHistoryBtn">Clear</button>
+        </div>
+        <ul class="history-list" id="historyList"></ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-tips">
+      <p>💡 <strong>SA Security Tips:</strong></p>
+      <ul>
+        <li>Use a different password for each account — especially FNB, ABSA &amp; Capitec.</li>
+        <li>Never share passwords via WhatsApp or SMS, even with people you trust.</li>
+        <li>Enable two-factor authentication (2FA) on all banking &amp; email apps.</li>
+        <li>If an Eskom or SASSA SMS asks for your password — it's a scam. Delete it.</li>
+      </ul>
+    </div>
+    <p class="footer-credit">Built with 💛 for South Africa · SafePass SA</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
